@@ -1,0 +1,194 @@
+{"event": "span.start", "span": "POST /case-application", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "70d8bd9b", "case_id": "CASE-1001"}
+{"event": "case.received", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "case_id": "CASE-1001", "customer_id": "C001"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "cded1448-969c-4d5b-9770-d81804a445df", "span_id": "915492db", "case_id": "CASE-1001"}
+{"event": "identity.result", "case_id": "CASE-1001", "customer_id": "C001", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "cded1448-969c-4d5b-9770-d81804a445df", "span_id": "915492db", "case_id": "CASE-1001", "status": "OK", "duration_ms": 52.84}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "483758c9", "case_id": "CASE-1001"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "483758c9", "case_id": "CASE-1001", "status": "OK", "duration_ms": 3.39}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "238b26c7", "case_id": "CASE-1001"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "4b90c9c3", "case_id": "CASE-1001"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "4b90c9c3", "case_id": "CASE-1001", "status": "OK", "duration_ms": 165.08}
+{"event": "model.result", "case_id": "CASE-1001", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.295, "customer_income": 900000.0, "requested_amount": 150000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "238b26c7", "case_id": "CASE-1001", "status": "OK", "duration_ms": 165.37}
+{"event": "span.start", "span": "decision.rules", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "a2f8f4ad", "case_id": "CASE-1001"}
+{"event": "business.decision", "case_id": "CASE-1001", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.295}
+{"event": "span.end", "span": "decision.rules", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "a2f8f4ad", "case_id": "CASE-1001", "status": "OK", "duration_ms": 0.05}
+{"event": "span.start", "span": "audit.write", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "77eab05c", "case_id": "CASE-1001"}
+{"event": "span.end", "span": "audit.write", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "77eab05c", "case_id": "CASE-1001", "status": "OK", "duration_ms": 4.15}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "81b32c0a-8a00-40ea-b0ae-a439f5d43908", "span_id": "70d8bd9b", "case_id": "CASE-1001", "status": "OK", "duration_ms": 226.43}
+#HTTP CASE-1001 200 233 {'case_id': 'CASE-1001', 'decision': 'APPROVE', 'risk_score': 0.295, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "d4a9be95", "case_id": "CASE-1002"}
+{"event": "case.received", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "case_id": "CASE-1002", "customer_id": "C002"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "2216a6f4-6a1d-475c-b234-5e723267e297", "span_id": "37c29da8", "case_id": "CASE-1002"}
+{"event": "identity.result", "case_id": "CASE-1002", "customer_id": "C002", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "2216a6f4-6a1d-475c-b234-5e723267e297", "span_id": "37c29da8", "case_id": "CASE-1002", "status": "OK", "duration_ms": 54.85}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "301a5590", "case_id": "CASE-1002"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "301a5590", "case_id": "CASE-1002", "status": "OK", "duration_ms": 0.34}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "4ecca4ed", "case_id": "CASE-1002"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "fe9ac3db", "case_id": "CASE-1002"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "fe9ac3db", "case_id": "CASE-1002", "status": "OK", "duration_ms": 164.06}
+{"event": "model.result", "case_id": "CASE-1002", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.365, "customer_income": 700000.0, "requested_amount": 225000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "4ecca4ed", "case_id": "CASE-1002", "status": "OK", "duration_ms": 164.54}
+{"event": "span.start", "span": "decision.rules", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "d9d12069", "case_id": "CASE-1002"}
+{"event": "business.decision", "case_id": "CASE-1002", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.36464285714285716}
+{"event": "span.end", "span": "decision.rules", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "d9d12069", "case_id": "CASE-1002", "status": "OK", "duration_ms": 0.09}
+{"event": "span.start", "span": "audit.write", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "162f9e66", "case_id": "CASE-1002"}
+{"event": "span.end", "span": "audit.write", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "162f9e66", "case_id": "CASE-1002", "status": "OK", "duration_ms": 0.54}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "3cbfd9f2-6d57-4a98-a0f4-73f77893c57a", "span_id": "d4a9be95", "case_id": "CASE-1002", "status": "OK", "duration_ms": 221.23}
+#HTTP CASE-1002 200 225 {'case_id': 'CASE-1002', 'decision': 'APPROVE', 'risk_score': 0.36464285714285716, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "27ee7282", "case_id": "CASE-1003"}
+{"event": "case.received", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "case_id": "CASE-1003", "customer_id": "C003"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "6b730fb6-f4b2-400f-abb4-571a54ed7204", "span_id": "99c7b8b4", "case_id": "CASE-1003"}
+{"event": "identity.result", "case_id": "CASE-1003", "customer_id": "C003", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "6b730fb6-f4b2-400f-abb4-571a54ed7204", "span_id": "99c7b8b4", "case_id": "CASE-1003", "status": "OK", "duration_ms": 52.44}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "7cf6f558", "case_id": "CASE-1003"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "7cf6f558", "case_id": "CASE-1003", "status": "OK", "duration_ms": 0.3}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "54cc05ef", "case_id": "CASE-1003"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "5b004283", "case_id": "CASE-1003"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "5b004283", "case_id": "CASE-1003", "status": "OK", "duration_ms": 165.09}
+{"event": "model.result", "case_id": "CASE-1003", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.389, "customer_income": 1200000.0, "requested_amount": 450000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "54cc05ef", "case_id": "CASE-1003", "status": "OK", "duration_ms": 165.51}
+{"event": "span.start", "span": "decision.rules", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "fc66558a", "case_id": "CASE-1003"}
+{"event": "business.decision", "case_id": "CASE-1003", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.38875000000000004}
+{"event": "span.end", "span": "decision.rules", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "fc66558a", "case_id": "CASE-1003", "status": "OK", "duration_ms": 0.13}
+{"event": "span.start", "span": "audit.write", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "2d1e473c", "case_id": "CASE-1003"}
+{"event": "span.end", "span": "audit.write", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "2d1e473c", "case_id": "CASE-1003", "status": "OK", "duration_ms": 0.48}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "08d85862-ca4b-4c2d-8738-272884da0b10", "span_id": "27ee7282", "case_id": "CASE-1003", "status": "OK", "duration_ms": 219.64}
+#HTTP CASE-1003 200 223 {'case_id': 'CASE-1003', 'decision': 'APPROVE', 'risk_score': 0.38875000000000004, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "5913ee8f", "case_id": "CASE-1004"}
+{"event": "case.received", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "case_id": "CASE-1004", "customer_id": "C004"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "0b10b7ff-e7a3-44ea-afd2-d253904299cd", "span_id": "2ccd6cb2", "case_id": "CASE-1004"}
+{"event": "identity.result", "case_id": "CASE-1004", "customer_id": "C004", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "0b10b7ff-e7a3-44ea-afd2-d253904299cd", "span_id": "2ccd6cb2", "case_id": "CASE-1004", "status": "OK", "duration_ms": 53.6}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "a2c95f1c", "case_id": "CASE-1004"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "a2c95f1c", "case_id": "CASE-1004", "status": "OK", "duration_ms": 0.26}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "35dea98c", "case_id": "CASE-1004"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "5b441119", "case_id": "CASE-1004"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "5b441119", "case_id": "CASE-1004", "status": "OK", "duration_ms": 165.08}
+{"event": "model.result", "case_id": "CASE-1004", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.559, "customer_income": 850000.0, "requested_amount": 300000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "35dea98c", "case_id": "CASE-1004", "status": "OK", "duration_ms": 165.45}
+{"event": "span.start", "span": "decision.rules", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "e7fe11bb", "case_id": "CASE-1004"}
+{"event": "business.decision", "case_id": "CASE-1004", "decision": "REVIEW", "model_version": "risk-2.1", "risk_score": 0.5588235294117647}
+{"event": "span.end", "span": "decision.rules", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "e7fe11bb", "case_id": "CASE-1004", "status": "OK", "duration_ms": 0.1}
+{"event": "span.start", "span": "audit.write", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "ae6bed0a", "case_id": "CASE-1004"}
+{"event": "span.end", "span": "audit.write", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "ae6bed0a", "case_id": "CASE-1004", "status": "OK", "duration_ms": 0.4}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "06135dfa-f021-4703-aac8-023aae5833fd", "span_id": "5913ee8f", "case_id": "CASE-1004", "status": "OK", "duration_ms": 220.53}
+#HTTP CASE-1004 200 224 {'case_id': 'CASE-1004', 'decision': 'REVIEW', 'risk_score': 0.5588235294117647, 'model_version': 'risk-2.1', 'reason': 'manual review required'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "7f3b9410", "case_id": "CASE-1005"}
+{"event": "case.received", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "case_id": "CASE-1005", "customer_id": "C005"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "8398e6cf-f42e-4d59-9c00-c517735d634d", "span_id": "0012f4dd", "case_id": "CASE-1005"}
+{"event": "identity.result", "case_id": "CASE-1005", "customer_id": "C005", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "8398e6cf-f42e-4d59-9c00-c517735d634d", "span_id": "0012f4dd", "case_id": "CASE-1005", "status": "OK", "duration_ms": 50.5}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "c0ccdd3d", "case_id": "CASE-1005"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "c0ccdd3d", "case_id": "CASE-1005", "status": "OK", "duration_ms": 0.4}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "5eb1b04a", "case_id": "CASE-1005"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "c3ab1a3b", "case_id": "CASE-1005"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "c3ab1a3b", "case_id": "CASE-1005", "status": "OK", "duration_ms": 164.81}
+{"event": "model.result", "case_id": "CASE-1005", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.415, "customer_income": 1500000.0, "requested_amount": 650000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "5eb1b04a", "case_id": "CASE-1005", "status": "OK", "duration_ms": 165.35}
+{"event": "span.start", "span": "decision.rules", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "9f4710ea", "case_id": "CASE-1005"}
+{"event": "business.decision", "case_id": "CASE-1005", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.41500000000000004}
+{"event": "span.end", "span": "decision.rules", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "9f4710ea", "case_id": "CASE-1005", "status": "OK", "duration_ms": 0.1}
+{"event": "span.start", "span": "audit.write", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "828f9f01", "case_id": "CASE-1005"}
+{"event": "span.end", "span": "audit.write", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "828f9f01", "case_id": "CASE-1005", "status": "OK", "duration_ms": 0.58}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "6a3c28da-5957-48e8-a370-534e7f151caf", "span_id": "7f3b9410", "case_id": "CASE-1005", "status": "OK", "duration_ms": 217.92}
+#HTTP CASE-1005 200 221 {'case_id': 'CASE-1005', 'decision': 'APPROVE', 'risk_score': 0.41500000000000004, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "dc856cf7", "case_id": "CASE-1042"}
+{"event": "case.received", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "case_id": "CASE-1042", "customer_id": "C001"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "96faef1e-4d0f-4dc0-92eb-24341286288f", "span_id": "b9604ff0", "case_id": "CASE-1042"}
+{"event": "identity.result", "case_id": "CASE-1042", "customer_id": "C001", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "96faef1e-4d0f-4dc0-92eb-24341286288f", "span_id": "b9604ff0", "case_id": "CASE-1042", "status": "OK", "duration_ms": 825.27}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "30ca8c10", "case_id": "CASE-1042"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "30ca8c10", "case_id": "CASE-1042", "status": "OK", "duration_ms": 0.37}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "0fc2325f", "case_id": "CASE-1042"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "307ce84b", "case_id": "CASE-1042"}
+{"event": "model.retry", "case_id": "CASE-1042", "attempt": 1, "reason": "timeout"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "307ce84b", "case_id": "CASE-1042", "status": "OK", "duration_ms": 165.22}
+{"event": "span.start", "span": "risk_model.attempt.2", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "713a8ac7", "case_id": "CASE-1042"}
+{"event": "span.end", "span": "risk_model.attempt.2", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "713a8ac7", "case_id": "CASE-1042", "status": "OK", "duration_ms": 320.95}
+{"event": "model.result", "case_id": "CASE-1042", "model_version": "risk-2.1", "tokens": 2950, "risk_score": 0.77, "customer_income": 900000.0, "requested_amount": 1100000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "0fc2325f", "case_id": "CASE-1042", "status": "OK", "duration_ms": 486.89}
+{"event": "span.start", "span": "decision.rules", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "ae1a28db", "case_id": "CASE-1042"}
+{"event": "business.decision", "case_id": "CASE-1042", "decision": "REJECT", "model_version": "risk-2.1", "risk_score": 0.77}
+{"event": "span.end", "span": "decision.rules", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "ae1a28db", "case_id": "CASE-1042", "status": "OK", "duration_ms": 0.1}
+{"event": "span.start", "span": "audit.write", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "eeb0998f", "case_id": "CASE-1042"}
+{"event": "span.end", "span": "audit.write", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "eeb0998f", "case_id": "CASE-1042", "status": "OK", "duration_ms": 0.56}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "7c12f737-9cc0-42e0-8b67-7837a4e563df", "span_id": "dc856cf7", "case_id": "CASE-1042", "status": "OK", "duration_ms": 1314.14}
+#HTTP CASE-1042 200 1318 {'case_id': 'CASE-1042', 'decision': 'REJECT', 'risk_score': 0.77, 'model_version': 'risk-2.1', 'reason': 'risk above threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "8cbab1da", "case_id": "CASE-2001"}
+{"event": "case.received", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "case_id": "CASE-2001", "customer_id": "C002"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "bc31daf8-b6dd-4c57-aefa-911a9efd1762", "span_id": "7c9e1b5f", "case_id": "CASE-2001"}
+{"event": "identity.result", "case_id": "CASE-2001", "customer_id": "C002", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "bc31daf8-b6dd-4c57-aefa-911a9efd1762", "span_id": "7c9e1b5f", "case_id": "CASE-2001", "status": "OK", "duration_ms": 53.17}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "6cecd284", "case_id": "CASE-2001"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "6cecd284", "case_id": "CASE-2001", "status": "OK", "duration_ms": 0.42}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "f4ab5829", "case_id": "CASE-2001"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "e7b9b9a0", "case_id": "CASE-2001"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "e7b9b9a0", "case_id": "CASE-2001", "status": "OK", "duration_ms": 164.54}
+{"event": "model.result", "case_id": "CASE-2001", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.336, "customer_income": 700000.0, "requested_amount": 180000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "f4ab5829", "case_id": "CASE-2001", "status": "OK", "duration_ms": 165.1}
+{"event": "span.start", "span": "decision.rules", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "5ffb2902", "case_id": "CASE-2001"}
+{"event": "business.decision", "case_id": "CASE-2001", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.3357142857142857}
+{"event": "span.end", "span": "decision.rules", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "5ffb2902", "case_id": "CASE-2001", "status": "OK", "duration_ms": 0.15}
+{"event": "span.start", "span": "audit.write", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "e1619805", "case_id": "CASE-2001"}
+{"event": "span.end", "span": "audit.write", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "e1619805", "case_id": "CASE-2001", "status": "OK", "duration_ms": 0.64}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "10e0b259-a3dc-4763-9315-cc0b015852cd", "span_id": "8cbab1da", "case_id": "CASE-2001", "status": "OK", "duration_ms": 220.5}
+#HTTP CASE-2001 200 224 {'case_id': 'CASE-2001', 'decision': 'APPROVE', 'risk_score': 0.3357142857142857, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "983260a9", "case_id": "CASE-2002"}
+{"event": "case.received", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "case_id": "CASE-2002", "customer_id": "C003"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "5ca57bc7-aee7-4a90-b001-3a6f7ebc9c9c", "span_id": "a504a63b", "case_id": "CASE-2002"}
+{"event": "identity.result", "case_id": "CASE-2002", "customer_id": "C003", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "5ca57bc7-aee7-4a90-b001-3a6f7ebc9c9c", "span_id": "a504a63b", "case_id": "CASE-2002", "status": "OK", "duration_ms": 55.18}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "a2130745", "case_id": "CASE-2002"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "a2130745", "case_id": "CASE-2002", "status": "OK", "duration_ms": 0.34}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "6f574a74", "case_id": "CASE-2002"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "ca019303", "case_id": "CASE-2002"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "ca019303", "case_id": "CASE-2002", "status": "OK", "duration_ms": 164.78}
+{"event": "model.result", "case_id": "CASE-2002", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.407, "customer_income": 1200000.0, "requested_amount": 500000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "6f574a74", "case_id": "CASE-2002", "status": "OK", "duration_ms": 165.37}
+{"event": "span.start", "span": "decision.rules", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "2f6094f5", "case_id": "CASE-2002"}
+{"event": "business.decision", "case_id": "CASE-2002", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.4075}
+{"event": "span.end", "span": "decision.rules", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "2f6094f5", "case_id": "CASE-2002", "status": "OK", "duration_ms": 0.1}
+{"event": "span.start", "span": "audit.write", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "41e717a5", "case_id": "CASE-2002"}
+{"event": "span.end", "span": "audit.write", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "41e717a5", "case_id": "CASE-2002", "status": "OK", "duration_ms": 0.61}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "0f110a29-7b64-4fe1-8f10-83d4ca0cc87d", "span_id": "983260a9", "case_id": "CASE-2002", "status": "OK", "duration_ms": 222.47}
+#HTTP CASE-2002 200 226 {'case_id': 'CASE-2002', 'decision': 'APPROVE', 'risk_score': 0.4075, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "eef62b11", "case_id": "CASE-2048"}
+{"event": "case.received", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "case_id": "CASE-2048", "customer_id": "C005"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "ff6374a0-adb4-43b8-add4-1435b59366d2", "span_id": "8c712a4d", "case_id": "CASE-2048"}
+{"event": "identity.result", "case_id": "CASE-2048", "customer_id": "C005", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "ff6374a0-adb4-43b8-add4-1435b59366d2", "span_id": "8c712a4d", "case_id": "CASE-2048", "status": "OK", "duration_ms": 823.34}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "32918e19", "case_id": "CASE-2048"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "32918e19", "case_id": "CASE-2048", "status": "OK", "duration_ms": 0.36}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "3b920491", "case_id": "CASE-2048"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "ac5819ec", "case_id": "CASE-2048"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "ac5819ec", "case_id": "CASE-2048", "status": "OK", "duration_ms": 162.17}
+{"event": "model.result", "case_id": "CASE-2048", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.43, "customer_income": 1500000.0, "requested_amount": 700000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "3b920491", "case_id": "CASE-2048", "status": "OK", "duration_ms": 162.68}
+{"event": "span.start", "span": "decision.rules", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "bb3bf11e", "case_id": "CASE-2048"}
+{"event": "business.decision", "case_id": "CASE-2048", "decision": "APPROVE", "model_version": "risk-2.1", "risk_score": 0.43000000000000005}
+{"event": "span.end", "span": "decision.rules", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "bb3bf11e", "case_id": "CASE-2048", "status": "OK", "duration_ms": 0.08}
+{"event": "span.start", "span": "audit.write", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "b9f35d29", "case_id": "CASE-2048"}
+{"event": "span.end", "span": "audit.write", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "b9f35d29", "case_id": "CASE-2048", "status": "OK", "duration_ms": 0.6}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "b5b95847-e3a4-492f-8fdd-044f9321322e", "span_id": "eef62b11", "case_id": "CASE-2048", "status": "OK", "duration_ms": 987.82}
+#HTTP CASE-2048 200 991 {'case_id': 'CASE-2048', 'decision': 'APPROVE', 'risk_score': 0.43000000000000005, 'model_version': 'risk-2.1', 'reason': 'risk below threshold'}
+{"event": "span.start", "span": "POST /case-application", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "9cbd77d5", "case_id": "CASE-2004"}
+{"event": "case.received", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "case_id": "CASE-2004", "customer_id": "C004"}
+{"event": "span.start", "span": "identity.verify", "trace_id": "f1c6300c-7cd1-46bc-920d-828b9cac19fb", "span_id": "7b2f6070", "case_id": "CASE-2004"}
+{"event": "identity.result", "case_id": "CASE-2004", "customer_id": "C004", "passed": true}
+{"event": "span.end", "span": "identity.verify", "trace_id": "f1c6300c-7cd1-46bc-920d-828b9cac19fb", "span_id": "7b2f6070", "case_id": "CASE-2004", "status": "OK", "duration_ms": 54.38}
+{"event": "span.start", "span": "customer.lookup", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "a726b75a", "case_id": "CASE-2004"}
+{"event": "span.end", "span": "customer.lookup", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "a726b75a", "case_id": "CASE-2004", "status": "OK", "duration_ms": 0.36}
+{"event": "span.start", "span": "risk_model.invoke", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "eb64a702", "case_id": "CASE-2004"}
+{"event": "span.start", "span": "risk_model.attempt.1", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "47f4dc79", "case_id": "CASE-2004"}
+{"event": "span.end", "span": "risk_model.attempt.1", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "47f4dc79", "case_id": "CASE-2004", "status": "OK", "duration_ms": 163.73}
+{"event": "model.result", "case_id": "CASE-2004", "model_version": "risk-2.1", "tokens": 1350, "risk_score": 0.585, "customer_income": 850000.0, "requested_amount": 350000.0}
+{"event": "span.end", "span": "risk_model.invoke", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "eb64a702", "case_id": "CASE-2004", "status": "OK", "duration_ms": 164.31}
+{"event": "span.start", "span": "decision.rules", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "9a2f6965", "case_id": "CASE-2004"}
+{"event": "business.decision", "case_id": "CASE-2004", "decision": "REVIEW", "model_version": "risk-2.1", "risk_score": 0.5852941176470587}
+{"event": "span.end", "span": "decision.rules", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "9a2f6965", "case_id": "CASE-2004", "status": "OK", "duration_ms": 0.11}
+{"event": "span.start", "span": "audit.write", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "e06a2be2", "case_id": "CASE-2004"}
+{"event": "span.end", "span": "audit.write", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "e06a2be2", "case_id": "CASE-2004", "status": "OK", "duration_ms": 0.63}
+{"event": "span.end", "span": "POST /case-application", "trace_id": "ec884ed3-4994-476c-af23-bcf316ca0ba3", "span_id": "9cbd77d5", "case_id": "CASE-2004", "status": "OK", "duration_ms": 220.73}
+#HTTP CASE-2004 200 224 {'case_id': 'CASE-2004', 'decision': 'REVIEW', 'risk_score': 0.5852941176470587, 'model_version': 'risk-2.1', 'reason': 'manual review required'}
+#METRICS {"counters": {"case_requests": 10, "model_calls": 11, "decision_approve": 7, "decision_review": 2, "decision_reject": 1}, "gauges": {"last_case_latency_ms": 220.7, "last_case_tokens": 1350}}

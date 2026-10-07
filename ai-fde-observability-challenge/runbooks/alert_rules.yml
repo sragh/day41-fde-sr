@@ -1,0 +1,43 @@
+# Prometheus-format alert rules for DecisionStream (scrape GET /metrics).
+groups:
+  - name: decisionstream
+    rules:
+      - alert: DecisionStreamHighErrorBurn
+        expr: |
+          sum(rate(http_requests_total{status=~"5.."}[1h])) / sum(rate(http_requests_total[1h])) > 0.072
+        for: 5m
+        labels: {severity: page, owner: platform-oncall}
+        annotations: {runbook: runbooks/README.md#a1-error-budget-burn}
+      - alert: DecisionStreamLatencyP95High
+        expr: histogram_quantile(0.95, sum by (le) (rate(http_request_duration_ms_bucket{route="/case-application"}[10m]))) > 500
+        for: 10m
+        labels: {severity: page, owner: platform-oncall}
+        annotations: {runbook: runbooks/README.md#a2-latency-slo}
+      - alert: ModelRetryRateHigh
+        expr: sum(rate(cases_with_retry_total[30m])) / sum(rate(decisions_total[30m])) > 0.02
+        for: 15m
+        labels: {severity: ticket, owner: ml-oncall}
+        annotations: {runbook: runbooks/README.md#a3-model-retries}
+      - alert: WastedTokenShareHigh
+        expr: sum(rate(model_wasted_tokens_total[1h])) / sum(rate(model_tokens_total[1h])) > 0.05
+        for: 30m
+        labels: {severity: ticket, owner: ml-oncall}
+        annotations: {runbook: runbooks/README.md#a4-token-cost}
+      - alert: DecisionMixShift
+        expr: |
+          abs(
+            sum(rate(decisions_total{decision="REJECT"}[6h])) / sum(rate(decisions_total[6h]))
+            - sum(rate(decisions_total{decision="REJECT"}[6h] offset 1d)) / sum(rate(decisions_total[6h] offset 1d))
+          ) > 0.10
+        for: 30m
+        labels: {severity: page, owner: ml-oncall}
+        annotations: {runbook: runbooks/README.md#a5-decision-mix-shift}
+      - alert: AuditWriteFailure
+        expr: increase(audit_write_failures_total[5m]) > 0
+        labels: {severity: page, owner: compliance-oncall}
+        annotations: {runbook: runbooks/README.md#a6-audit-failure}
+      - alert: IdentityDependencySlow
+        expr: histogram_quantile(0.95, sum by (le) (rate(dependency_duration_ms_bucket{dependency="identity-provider"}[10m]))) > 150
+        for: 10m
+        labels: {severity: ticket, owner: platform-oncall}
+        annotations: {runbook: runbooks/README.md#a7-identity-latency}

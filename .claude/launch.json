@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "decisionstream",
+      "runtimeExecutable": "/private/tmp/claude-501/-Users-ihds-SR-BSL-FDE-Day-41---ai-fde-observability-challenge-v3-main/f3bdd44a-32dd-49a5-bd23-4046601c346f/scratchpad/venv/bin/python",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "app.main:app",
+        "--port",
+        "8000",
+        "--app-dir",
+        "/Users/ihds/SR/BSL-FDE/Day-41---ai-fde-observability-challenge-v3-main/ai-fde-observability-challenge"
+      ],
+      "port": 8000
+    }
+  ]
+}

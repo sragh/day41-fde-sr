@@ -1,0 +1,568 @@
+{
+  "results": [
+    {
+      "case_id": "CASE-1001",
+      "status": 200,
+      "latency_ms": 228,
+      "trace_id": "67602f72019141db806e518836e88070",
+      "decision": "APPROVE",
+      "risk_score": 0.295,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.238,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-1002",
+      "status": 200,
+      "latency_ms": 221,
+      "trace_id": "630bd4ca13e249548ba11f30c3de2174",
+      "decision": "APPROVE",
+      "risk_score": 0.365,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.292,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-1003",
+      "status": 200,
+      "latency_ms": 226,
+      "trace_id": "8f1a4e203bcc470cabf03f2785b32478",
+      "decision": "APPROVE",
+      "risk_score": 0.389,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.311,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-1004",
+      "status": 200,
+      "latency_ms": 222,
+      "trace_id": "436af77954a2491e86dbfcf31036c4a4",
+      "decision": "REVIEW",
+      "risk_score": 0.559,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.424,
+      "flipped_by_model_update": true
+    },
+    {
+      "case_id": "CASE-1005",
+      "status": 200,
+      "latency_ms": 220,
+      "trace_id": "d0d8ffad1ac34f93918174b5c56f6e81",
+      "decision": "APPROVE",
+      "risk_score": 0.415,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.332,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-1042",
+      "status": 200,
+      "latency_ms": 1317,
+      "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+      "decision": "REJECT",
+      "risk_score": 0.77,
+      "decision_under_risk_2_0": "REVIEW",
+      "score_under_risk_2_0": 0.608,
+      "flipped_by_model_update": true
+    },
+    {
+      "case_id": "CASE-2001",
+      "status": 200,
+      "latency_ms": 225,
+      "trace_id": "d92e9b9e335b4eab99a8ea7565643a23",
+      "decision": "APPROVE",
+      "risk_score": 0.336,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.27,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-2002",
+      "status": 200,
+      "latency_ms": 225,
+      "trace_id": "eafe9c06565d45118dc38b14b3ebfc08",
+      "decision": "APPROVE",
+      "risk_score": 0.407,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.326,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-2048",
+      "status": 200,
+      "latency_ms": 993,
+      "trace_id": "6f5bb92c47c14aa686b2ac20450ab99b",
+      "decision": "APPROVE",
+      "risk_score": 0.43,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.343,
+      "flipped_by_model_update": false
+    },
+    {
+      "case_id": "CASE-2004",
+      "status": 200,
+      "latency_ms": 222,
+      "trace_id": "5c47ffd989764b1d83d5be2b6f249362",
+      "decision": "REVIEW",
+      "risk_score": 0.585,
+      "decision_under_risk_2_0": "APPROVE",
+      "score_under_risk_2_0": 0.444,
+      "flipped_by_model_update": true
+    }
+  ],
+  "incident_trace": {
+    "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+    "span_count": 8,
+    "critical_path": [
+      {
+        "span": "POST /case-application",
+        "duration_ms": 1313.8
+      },
+      {
+        "span": "identity.verify",
+        "duration_ms": 823.21
+      }
+    ],
+    "spans": [
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "342be543c4974d91",
+        "parent_span_id": null,
+        "name": "POST /case-application",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:53.701089+00:00",
+        "duration_ms": 1313.8,
+        "status": "OK",
+        "attributes": {}
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "89579ae4184542e2",
+        "parent_span_id": "342be543c4974d91",
+        "name": "identity.verify",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:53.701307+00:00",
+        "duration_ms": 823.21,
+        "status": "OK",
+        "attributes": {
+          "dependency": "identity-provider",
+          "fault_injected": true,
+          "passed": true
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "ccb7aa6228454c85",
+        "parent_span_id": "342be543c4974d91",
+        "name": "customer.lookup",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:54.524762+00:00",
+        "duration_ms": 0.35,
+        "status": "OK",
+        "attributes": {
+          "store": "customers.csv",
+          "found": true
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "045c58b917a34520",
+        "parent_span_id": "342be543c4974d91",
+        "name": "risk_model.invoke",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:54.525429+00:00",
+        "duration_ms": 487.98,
+        "status": "OK",
+        "attributes": {
+          "model_version": "risk-2.1",
+          "fault_injected": true,
+          "tokens": 2950,
+          "retry_count": 1,
+          "risk_score": 0.77,
+          "cost_usd": 0.0295
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "10522391e58046ba",
+        "parent_span_id": "045c58b917a34520",
+        "name": "risk_model.attempt.1",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:54.525586+00:00",
+        "duration_ms": 162.73,
+        "status": "OK",
+        "attributes": {
+          "model_version": "risk-2.1",
+          "attempt": 1,
+          "tokens": 1350,
+          "outcome": "retry",
+          "retry_reason": "timeout"
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "15022e7493524960",
+        "parent_span_id": "045c58b917a34520",
+        "name": "risk_model.attempt.2",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:54.688620+00:00",
+        "duration_ms": 324.2,
+        "status": "OK",
+        "attributes": {
+          "model_version": "risk-2.1",
+          "attempt": 2,
+          "tokens": 1600,
+          "outcome": "success"
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "385c6d00e44248cc",
+        "parent_span_id": "342be543c4974d91",
+        "name": "decision.rules",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:55.013605+00:00",
+        "duration_ms": 0.14,
+        "status": "OK",
+        "attributes": {
+          "rules_version": "rules-1.0",
+          "model_version": "risk-2.1",
+          "decision": "REJECT",
+          "risk_score": 0.77
+        }
+      },
+      {
+        "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+        "span_id": "f1d8d2aef3964e46",
+        "parent_span_id": "342be543c4974d91",
+        "name": "audit.write",
+        "case_id": "CASE-1042",
+        "service": "decisionstream",
+        "start_ts": "2026-10-07T02:51:55.013922+00:00",
+        "duration_ms": 0.83,
+        "status": "OK",
+        "attributes": {}
+      }
+    ]
+  },
+  "metrics": {
+    "counters": {
+      "case_requests": 10,
+      "model_calls{model_version=risk-2.1}": 11,
+      "model_tokens_total{model_version=risk-2.1}": 15100,
+      "model_cost_usd_total{model_version=risk-2.1}": 0.15100000000000002,
+      "audit_records_total": 10,
+      "decision_approve": 7,
+      "decisions_total{decision=APPROVE,model_version=risk-2.1}": 7,
+      "http_requests_total{route=/case-application,status=200}": 10,
+      "decision_review": 2,
+      "decisions_total{decision=REVIEW,model_version=risk-2.1}": 2,
+      "faults_injected_total{fault=slow_identity}": 2,
+      "faults_injected_total{fault=model_timeout}": 1,
+      "model_retries_total{model_version=risk-2.1,reason=timeout}": 1,
+      "model_wasted_tokens_total{model_version=risk-2.1}": 1350,
+      "decision_reject": 1,
+      "decisions_total{decision=REJECT,model_version=risk-2.1}": 1,
+      "cases_with_retry_total{model_version=risk-2.1}": 1
+    },
+    "gauges": {
+      "last_case_tokens": 1350,
+      "last_case_latency_ms": 217.4
+    },
+    "histograms": {
+      "dependency_duration_ms{dependency=identity-provider}": {
+        "count": 10,
+        "sum": 2070.02,
+        "p50": 100.0,
+        "p95": 1000.0,
+        "p99": 1000.0
+      },
+      "model_attempt_duration_ms{model_version=risk-2.1}": {
+        "count": 11,
+        "sum": 1959.41,
+        "p50": 250.0,
+        "p95": 500.0,
+        "p99": 500.0
+      },
+      "model_invoke_duration_ms{model_version=risk-2.1}": {
+        "count": 10,
+        "sum": 1964.68,
+        "p50": 250.0,
+        "p95": 500.0,
+        "p99": 500.0
+      },
+      "risk_score{model_version=risk-2.1}": {
+        "count": 10,
+        "sum": 4.55,
+        "p50": 0.45,
+        "p95": 0.85,
+        "p99": 0.85
+      },
+      "http_request_duration_ms{outcome=approve,route=/case-application}": {
+        "count": 7,
+        "sum": 2314.5,
+        "p50": 250.0,
+        "p95": 1000.0,
+        "p99": 1000.0
+      },
+      "http_request_duration_ms{outcome=review,route=/case-application}": {
+        "count": 2,
+        "sum": 436.81,
+        "p50": 250.0,
+        "p95": 250.0,
+        "p99": 250.0
+      },
+      "http_request_duration_ms{outcome=reject,route=/case-application}": {
+        "count": 1,
+        "sum": 1313.9,
+        "p50": 2000.0,
+        "p95": 2000.0,
+        "p99": 2000.0
+      }
+    }
+  },
+  "slo": {
+    "availability": {
+      "value": 1.0,
+      "objective": 0.995,
+      "status": "MET",
+      "error_budget_remaining": 1.0
+    },
+    "latency_p95_ms": {
+      "value": 2000.0,
+      "objective": 500,
+      "status": "BREACHED"
+    },
+    "model_retry_rate": {
+      "value": 0.1,
+      "objective": 0.02,
+      "status": "BREACHED",
+      "retries_total": 1
+    },
+    "audit_completeness": {
+      "value": 1.0,
+      "objective": 1.0,
+      "status": "MET"
+    }
+  },
+  "audit_records": [
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:52.807908+00:00",
+      "case_id": "CASE-1001",
+      "trace_id": "67602f72019141db806e518836e88070",
+      "span_id": "433e454db48f4d09",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.295,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "38f4b2e151ce6912e5908f1dc3231b1d621e7a2433e16b13a798d76fc9808f5b",
+      "service_version": "1.0.0",
+      "prev_hash": "GENESIS",
+      "record_hash": "6f7cc694635685066078864ba35c1b0bd222b1ddf38ff538fea1f3e0b1bed1d6"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:53.028472+00:00",
+      "case_id": "CASE-1002",
+      "trace_id": "630bd4ca13e249548ba11f30c3de2174",
+      "span_id": "075e5f074f934c29",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.3646,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "5b0a60d6a4f0806545d0ae1edaa8942aa847e5036cb420d06819a655f098bf21",
+      "service_version": "1.0.0",
+      "prev_hash": "6f7cc694635685066078864ba35c1b0bd222b1ddf38ff538fea1f3e0b1bed1d6",
+      "record_hash": "96e958a96d1d5df108612d0c4cf9271202bb9af1acc71c1e956ff80e1ecdb11f"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:53.255051+00:00",
+      "case_id": "CASE-1003",
+      "trace_id": "8f1a4e203bcc470cabf03f2785b32478",
+      "span_id": "72ece7710e1840c1",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.3888,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "ba7d6237b525b9981e125d444fae685e6ae5a79814de34ad419a694c929b47aa",
+      "service_version": "1.0.0",
+      "prev_hash": "96e958a96d1d5df108612d0c4cf9271202bb9af1acc71c1e956ff80e1ecdb11f",
+      "record_hash": "44d540d19a788edd7c2f2edef11999976c558baf3e6f30308c7d7540847c7812"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:53.477262+00:00",
+      "case_id": "CASE-1004",
+      "trace_id": "436af77954a2491e86dbfcf31036c4a4",
+      "span_id": "1ac2eb4d7b8d4312",
+      "decision": "REVIEW",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.5588,
+      "reason": "manual review required",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "89f3b17a31e36151cdacb166b3a9cb9f44219db50325fa2eedfa3dbab4cba8f5",
+      "service_version": "1.0.0",
+      "prev_hash": "44d540d19a788edd7c2f2edef11999976c558baf3e6f30308c7d7540847c7812",
+      "record_hash": "834090310109676856c1b838c228a3ac206abbbc2450abed99eeb98a2332fb41"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:53.697439+00:00",
+      "case_id": "CASE-1005",
+      "trace_id": "d0d8ffad1ac34f93918174b5c56f6e81",
+      "span_id": "d7fd648994eb4376",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.415,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "55dcce70546545d1ebf76d9f26efb1b9579f421ffdac1c3636240bde15736898",
+      "service_version": "1.0.0",
+      "prev_hash": "834090310109676856c1b838c228a3ac206abbbc2450abed99eeb98a2332fb41",
+      "record_hash": "65ff6ca19a2fd66a3fdc5cc3a853048e19dc571e5c53067ff37fee43f6128d98"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:55.013989+00:00",
+      "case_id": "CASE-1042",
+      "trace_id": "09b2c1a6b5c14336b306d1633fcb7a91",
+      "span_id": "f1d8d2aef3964e46",
+      "decision": "REJECT",
+      "model_version": "risk-2.1",
+      "model_retry_count": 1,
+      "risk_score": 0.77,
+      "reason": "risk above threshold",
+      "tokens": 2950,
+      "cost_usd": 0.0295,
+      "retry_reason": "timeout",
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "44a2bbd00470ad437d85e4f8f4a95c203669a5e4b8a4d2dafbb1898ce206a1fb",
+      "service_version": "1.0.0",
+      "prev_hash": "65ff6ca19a2fd66a3fdc5cc3a853048e19dc571e5c53067ff37fee43f6128d98",
+      "record_hash": "d0b0cea72957d1512fc884a0425a23810089d9afb715944a19cdb9625487766f"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:55.239692+00:00",
+      "case_id": "CASE-2001",
+      "trace_id": "d92e9b9e335b4eab99a8ea7565643a23",
+      "span_id": "12530caaa56944da",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.3357,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "d893046de87b7bda38be13d7590a4b65ba95926491c1af2fa7ed8ad554262e2c",
+      "service_version": "1.0.0",
+      "prev_hash": "d0b0cea72957d1512fc884a0425a23810089d9afb715944a19cdb9625487766f",
+      "record_hash": "5a717a5074c7d93c7e76ceabaeb102b1d16d3c8d771d3cfeb6ce23a0be5b0c5c"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:55.464215+00:00",
+      "case_id": "CASE-2002",
+      "trace_id": "eafe9c06565d45118dc38b14b3ebfc08",
+      "span_id": "9d458a9fe9b647f8",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.4075,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "98d88e5d6ae1d2aab5281fe4b133ec21dbef13e0c94ddb505d6466218b152d5b",
+      "service_version": "1.0.0",
+      "prev_hash": "5a717a5074c7d93c7e76ceabaeb102b1d16d3c8d771d3cfeb6ce23a0be5b0c5c",
+      "record_hash": "d223d0158f1803347ceaf2f7f20bed6398e91e507b6677d0ab13553b1569e004"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:56.457810+00:00",
+      "case_id": "CASE-2048",
+      "trace_id": "6f5bb92c47c14aa686b2ac20450ab99b",
+      "span_id": "fe5b62a5439b450b",
+      "decision": "APPROVE",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.43,
+      "reason": "risk below threshold",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "334a4a2c6d798fcb9e85a459c555408032a082a2a99ab11f4ea55db16cc95b93",
+      "service_version": "1.0.0",
+      "prev_hash": "d223d0158f1803347ceaf2f7f20bed6398e91e507b6677d0ab13553b1569e004",
+      "record_hash": "15133ba565af38888475ab0f8cbe7db564d005ed1a304393e664d3c35ff436fc"
+    },
+    {
+      "schema_version": 3,
+      "ts": "2026-10-07T02:51:56.679560+00:00",
+      "case_id": "CASE-2004",
+      "trace_id": "5c47ffd989764b1d83d5be2b6f249362",
+      "span_id": "fa35cbbed96c458b",
+      "decision": "REVIEW",
+      "model_version": "risk-2.1",
+      "model_retry_count": 0,
+      "risk_score": 0.5853,
+      "reason": "manual review required",
+      "tokens": 1350,
+      "cost_usd": 0.0135,
+      "retry_reason": null,
+      "rules_version": "rules-1.0",
+      "config_hash": "7bc85c26c290",
+      "input_hash": "8674a20153fb5ae1b974cc0112ff8109ddcce928b3627f101e9260fdf6dd02c1",
+      "service_version": "1.0.0",
+      "prev_hash": "15133ba565af38888475ab0f8cbe7db564d005ed1a304393e664d3c35ff436fc",
+      "record_hash": "436494922c24e9c4e9536814d31f059c2c278119b0fafbb18662c9b5ed1ab058"
+    }
+  ]
+}

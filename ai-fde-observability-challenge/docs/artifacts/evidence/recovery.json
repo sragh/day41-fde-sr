@@ -1,0 +1,72 @@
+[
+  {
+    "check": "A1 business outcome unchanged (REJECT, risk-2.1)",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A2 one trace holds all spans incl. identity",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A3 no orphan spans",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A4 audit has retry count, tokens, trace link",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A5 token and wasted-token metrics recorded",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A6 latency SLO breach detected",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A7 retry-rate SLO breach detected",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A8 injected faults are visible in metrics",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A9 audit hash chain verifies",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "A10 validation failure metered (422)",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "B1 availability SLO met",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "B2 latency SLO met",
+    "pass": true,
+    "detail": "250.0"
+  },
+  {
+    "check": "B3 retry-rate SLO met",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "check": "B4 audit completeness met",
+    "pass": true,
+    "detail": ""
+  }
+]

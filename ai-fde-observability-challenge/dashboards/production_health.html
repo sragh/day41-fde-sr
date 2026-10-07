@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>DecisionStream production health</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a1a;--card:#f4f5f7;--ok:#1a7f37;--bad:#b42318;--mut:#666}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--fg:#eee;--card:#1d1f23;--ok:#4ade80;--bad:#f87171;--mut:#999}}
+body{font:14px system-ui;background:var(--bg);color:var(--fg);margin:24px}
+h1{font-size:20px}h2{font-size:15px;margin-top:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.tile{background:var(--card);padding:12px;border-radius:8px;border-left:4px solid transparent}
+.tile.ok{border-color:var(--ok)}.tile.bad{border-color:var(--bad)}
+.t{color:var(--mut);font-size:12px}.v{font-size:24px;font-weight:600}.s{color:var(--mut);font-size:12px}
+table{border-collapse:collapse}td,th{padding:4px 12px;text-align:left;border-bottom:1px solid var(--card)}
+tr.bad td{color:var(--bad)}
+</style>
+<h1>DecisionStream production health</h1>
+<p class="s">Snapshot of the validation workload (10 cases). Live source: /slo, /metrics, /metrics-snapshot.</p>
+<h2>Reliability, performance, AI, cost, business</h2><div class="grid"><div class="tile ok"><div class="t">Availability</div><div class="v">100.0%</div><div class="s">objective 99.5%</div></div><div class="tile bad"><div class="t">Latency P95 (bucket bound)</div><div class="v">2000 ms</div><div class="s">objective 500 ms</div></div><div class="tile bad"><div class="t">Model retry rate</div><div class="v">10.0%</div><div class="s">objective ≤ 2%</div></div><div class="tile ok"><div class="t">Audit completeness</div><div class="v">100.0%</div><div class="s">objective 100%</div></div><div class="tile "><div class="t">Tokens</div><div class="v">15,100</div><div class="s">1,350 wasted on retries</div></div><div class="tile "><div class="t">Est. model cost</div><div class="v">$0.151</div><div class="s">assumed $0.01 / 1k tokens</div></div><div class="tile "><div class="t">Decision mix</div><div class="v">7/2/1</div><div class="s">approve / review / reject</div></div><div class="tile bad"><div class="t">Decisions changed by risk-2.1</div><div class="v">3/10</div><div class="s">vs risk-2.0 counterfactual</div></div><div class="tile "><div class="t">Identity P95</div><div class="v">1000 ms</div><div class="s">dependency latency</div></div><div class="tile "><div class="t">Model invoke P95</div><div class="v">500 ms</div><div class="s">inference latency</div></div></div>
+<h2>Per-case view</h2>
+<table><tr><th>Case</th><th>Latency ms</th><th>Decision (risk-2.1)</th><th>Score</th><th>Decision under risk-2.0</th></tr><tr class=""><td>CASE-1001</td><td>228</td><td>APPROVE</td><td>0.295</td><td>APPROVE</td></tr><tr class=""><td>CASE-1002</td><td>221</td><td>APPROVE</td><td>0.365</td><td>APPROVE</td></tr><tr class=""><td>CASE-1003</td><td>226</td><td>APPROVE</td><td>0.389</td><td>APPROVE</td></tr><tr class="bad"><td>CASE-1004</td><td>222</td><td>REVIEW</td><td>0.559</td><td>APPROVE</td></tr><tr class=""><td>CASE-1005</td><td>220</td><td>APPROVE</td><td>0.415</td><td>APPROVE</td></tr><tr class="bad"><td>CASE-1042</td><td>1317</td><td>REJECT</td><td>0.77</td><td>REVIEW</td></tr><tr class=""><td>CASE-2001</td><td>225</td><td>APPROVE</td><td>0.336</td><td>APPROVE</td></tr><tr class=""><td>CASE-2002</td><td>225</td><td>APPROVE</td><td>0.407</td><td>APPROVE</td></tr><tr class=""><td>CASE-2048</td><td>993</td><td>APPROVE</td><td>0.43</td><td>APPROVE</td></tr><tr class="bad"><td>CASE-2004</td><td>222</td><td>REVIEW</td><td>0.585</td><td>APPROVE</td></tr></table>

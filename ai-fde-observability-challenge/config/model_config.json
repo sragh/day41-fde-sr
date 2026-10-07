@@ -1,0 +1,18 @@
+{
+  "current": {
+    "version": "risk-2.1",
+    "base_score": 0.22,
+    "debt_weight": 0.45,
+    "foreign_country_penalty": 0.18
+  },
+  "previous": {
+    "version": "risk-2.0",
+    "base_score": 0.18,
+    "debt_weight": 0.35,
+    "foreign_country_penalty": 0.12
+  },
+  "pricing": {
+    "usd_per_1k_tokens": 0.01,
+    "note": "ASSUMPTION: placeholder blended rate; replace with contracted price"
+  }
+}

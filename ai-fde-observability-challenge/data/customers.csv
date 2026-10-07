@@ -1,0 +1,6 @@
+customer_id,segment,tenure_years,kyc_status,region
+C001,retail,7,VERIFIED,IN-SOUTH
+C002,retail,2,VERIFIED,IN-WEST
+C003,SME,5,VERIFIED,IN-NORTH
+C004,retail,1,VERIFIED,SG
+C005,SME,9,VERIFIED,IN-SOUTH
